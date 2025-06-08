@@ -4,39 +4,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruan-e-nicoly</title>
+    <title>Ruan & Nicoly</title>
+
+    <link rel="shortcut icon" href="./src/img/coracao.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <link rel="stylesheet" href="./src/CSS/style.css" />
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        .couple-bg {
+            background-image: url('./src/img/img_bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (min-width: 768px) {
+            .couple-bg {
+                background-position: top 25% center;
+            }
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        p {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .photo-stack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 30vh;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+
+        .photo-stack img {
+            position: absolute;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+        }
+
+        .photo-1 {
+            width: 150px;
+            height: auto;
+            transform: rotate(0) translateY(0);
+            z-index: 3;
+            border-radius: 10px;
+            border: 2px solid #fff;
+        }
+
+        .photo-2 {
+            width: 125px;
+            height: auto;
+            transform: rotate(-10deg) translateY(0);
+            left: 0;
+            z-index: 2;
+            border-radius: 10px;
+        }
+
+        .photo-3 {
+            width: 125px;
+            height: auto;
+            transform: rotate(5deg) translateY(0);
+            right: 0;
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .heart-pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .photo-stack {
+                height: 400px;
+            }
+
+            .photo-1,
+            .photo-2,
+            .photo-3 {
+                width: 220px;
+                height: 300px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
     <!-- <button onclick="transicao(1, 2)">Começar</button> -->
-    <section id="section1" class="active">
-        
+    <section id="section1" class="active couple-bg relative min-h-screen flex items-end pb-16 md:items-center md:pb-0">
+        <!-- Gradiente escuro (bottom to top) -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+
+        <!-- Conteúdo de texto -->
+        <div class="container relative mx-auto px-4 text-center animate-fadeIn">
+            <h1 class="text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-4 leading-none">
+                Feliz dia<span class="block md:inline">dos namorados</span>
+            </h1>
+
+            <div class="max-w-2xl mx-auto mt-8">
+                <p class="text-lg md:text-2xl text-pink-200 mb-6 ">
+                    Cada momento contigo é um capítulo da nossa própria história de amor
+                </p>
+                <div class="mt-10">
+                    <a href="#section2"
+                        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transform transition duration-500 hover:scale-105">
+                        Clique para chorar 🥹
+                </a>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="section2">
-    
-            
-    </section>
-    <section id="section3">
-        
-    </section>
-    <section id="section4">
-        
-    </section>
-    <section id="section5" class="section-namoro">
-       
-    </section>
-    <section id="section6" class="section-finalizacao">
-       
+    <section id="section2" class="w-full h-full py-28 px-4 bg-gradient-to-b from-pink-400 to-pink-600">
+        <div class="">
+            <!-- Título com decoração -->
+            <div class="text-center mb-6 relative">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <span class="heart-pulse inline-block mr-2 text-red-500"><i class="fas fa-heart"></i></span>
+                    Nossos Momentos
+                    <span class="heart-pulse inline-block ml-2 text-red-500"><i class="fas fa-heart"></i></span>
+                </h2>
+                <div class="w-24 h-1 bg-white bg-opacity-50 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Container das fotos sobrepostas -->
+            <div class="photo-stack">
+                <img src="./src/img/img-1.jpg" alt="Momento romântico" class="photo-1">
+                <img src="./src/img/img-2.jpg" alt="Abraço apaixonado" class="photo-2">
+                <img src="./src/img/img-3.jpg" alt="Beijo de amor" class="photo-3">
+            </div>
+
+            <!-- Texto e botão -->
+            <div class="text-center max-w-2xl mx-auto">
+                <p class="text-white text-xs md:text-xl mb-8 mt-4 leading-relaxed">
+                    Feliz dia dos namorados meu amor, eu quero que esse dia seja especial tanto pra vc quanto tá sendo
+                    pra mim, eu nem imaginava que eu iria ta namorando em 2025, até eu te conhecer isso nem passava pela
+                    minha cabeça, agr olha eu aqui, tão feliz, eu sou tão feliz por ter vc ao meu lado espero que eu
+                    esteja sendo um bom namorado pra vc, pq pra mim vc é a melhor pessoa do mundo, eu não vejo um futuro
+                    em minha vida sem vc, eu não consigo imaginar eu e vc longe um do outro, eu fiz isso pra te dizer o
+                    quanto eu te amo e mostrar um pouco do meu amor por vc.
+                </p>
+
+                <a href="#section3"
+                    class="bg-white text-pink-600 hover:bg-pink-100 font-bold py-4 px-10 rounded-full transform transition duration-500 hover:scale-105 shadow-lg group">
+                    <span class="group-hover:tracking-widest transition-all duration-300">Video Finalização</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            </div>
+        </div>
     </section>
 
-    <script src="./src/JS/app.js"></script>
+    <section id="section3">
+        <!-- Seção de Despedida -->
+        <section class="py-28 px-4 relative overflow-hidden">
+            <!-- Elementos decorativos -->
+            <div class="absolute top-20 left-4 text-pink-400 opacity-30 float-animation">
+                <i class="fas fa-heart text-4xl"></i>
+            </div>
+            <div class="absolute bottom-40 right-6 text-pink-400 opacity-30 float-animation"
+                style="animation-delay: 1s;">
+                <i class="fas fa-heart text-5xl"></i>
+            </div>
+            <div class="absolute top-1/3 right-12 text-pink-400 opacity-40 float-animation"
+                style="animation-delay: 2s;">
+                <i class="fas fa-heart text-3xl"></i>
+            </div>
+
+            <div class="container mx-auto max-w-4xl text-center relative z-10">
+                <!-- Título -->
+                <h2 class="text-3xl md:text-4xl font-bold text-pink-800 mb-6">
+                    <span class="inline-block mr-3"><i class="fas fa-heart text-red-500"></i></span>
+                    Para Sempre Em Meu Coração
+                    <span class="inline-block ml-3"><i class="fas fa-heart text-red-500"></i></span>
+                </h2>
+
+                <!-- Divisor decorativo -->
+                <div class="w-24 h-1 bg-pink-500 bg-opacity-50 mx-auto rounded-full mb-4"></div>
+
+                <!-- Mensagem romântica -->
+                <div class="max-w-2xl mx-auto mb-2">
+                    <p class="text-lg md:text-xl text-pink-700 italic mb-4">
+                        "O amor não se vê com os olhos, mas com o coração."
+                    </p>
+                </div>
+
+                <!-- Container do vídeo -->
+                <div class="mb-6 pulse-animation">
+                    <div class="video-container flex justify-center items-center">
+                        <!-- Substitua o src pelo seu vídeo -->
+                        <iframe src="https://www.youtube.com/embed/Y9TIK3Nzo8A?si=ICXJH8oU-TD0J35-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Mensagem final -->
+                <div class="max-w-2xl mx-auto">
+                    <h3 class="text-2xl md:text-3xl font-bold text-pink-900 mb-6">
+                        Feliz Dia dos Namorados, Meu Amor!
+                    </h3>
+                    <p class="text-pink-700 text-lg mb-4">
+                        Que nossa história continue sendo escrita com amor, risadas e momentos inesquecíveis.
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="pulse-animation" style="animation-delay: 0.3s;">
+                            <i class="fas fa-heart text-red-500 text-3xl"></i>
+                        </div>
+                        <div class="pulse-animation" style="animation-delay: 0.6s;">
+                            <i class="fas fa-heart text-red-500 text-3xl"></i>
+                        </div>
+                        <div class="pulse-animation" style="animation-delay: 0.9s;">
+                            <i class="fas fa-heart text-red-500 text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assinatura -->
+            <div class="text-center text-pink-700">
+                <p>Com todo meu amor,</p>
+                <p class="font-bold text-xl mt-2">Ruan</p>
+            </div>
+        </section>
+    </section>
+
+    <script src="./src/JS/Scroll.js"></script>
 </body>
 
 </html>
